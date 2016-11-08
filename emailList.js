@@ -3,9 +3,9 @@ $(document).ready(function(){
 	$("#inputEmail").keyup(function(event) {
   		var inputText = $("#inputEmail").val();
   		var lastChar = inputText.substr(inputText.length - 1);
-  		if(event.keyCode == 186 && lastChar == ';'){
+  		if(event.keyCode == 188 && lastChar == ','){ //KEYCODE 188 -> ','
 	  		if(validateEmail(inputText)){
-	  			var emailtext = inputText.split(";", 1);
+	  			var emailtext = inputText.split(",", 1);
 	  			$("#listEmails").append("<div id='"+emailtext+"' class='emailtext'>"+emailtext+"<div id='emailtext-del'>X</div></div>");
 	  			$("#inputEmail").val("");
 
@@ -16,7 +16,7 @@ $(document).ready(function(){
 				$("#inputEmail").attr("style","color:black");
 	  		}
 	  		else{
-	  			$("#inputEmail").val(inputText.split(";", 1));
+	  			$("#inputEmail").val(inputText.split(",", 1));
 	  			$("#inputEmail").attr("style","color:red");
 	  		}
 	  	}
